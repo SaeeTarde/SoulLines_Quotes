@@ -1,0 +1,213 @@
+.background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* push behind content */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dashboard-container {
+  position: relative; /* this is important! */
+  z-index: 1;
+  min-height: 100vh;
+  padding: 3rem;
+  background-color: #4f5688;
+  color: #d7d3f8;
+}
+
+.profile-header {
+  z-index: 2;
+  position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #9875e4;
+}
+
+.profile-details h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.dashboard-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  size: 1rem;
+}
+
+.tag {
+  background-color: #978ef8;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #222;
+  cursor: default;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.tag:hover {
+  background-color: #877feb; /* Slightly darker on hover */
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45); /* Subtle shadow */
+}
+
+.section-title {
+  color: #fff;
+  margin: 2rem 0 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+p {
+  color: #fff;
+}
+
+.tab-buttons {
+  z-index: 2;
+  position: relative; /* 👈 add this */
+  background-color: #e0e0e8;
+  width: 100%;
+  border-radius: 20px;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+.tab-buttons button {
+  z-index: 1;
+  background-color: #3a3a6d;
+  color: #d7d3f8;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-buttons button.active {
+  background-color: #c7c3f8;
+  color: #3a3a6d;
+  transform: scale(1.05);
+}
+
+.tab-buttons button:hover {
+  transform: scale(1.05);
+  background-color: #5a5a9c;
+}
+
+.settings-dropdown {
+  margin-top: -10px;
+  z-index: 2;
+  position: relative; /* 👈 this is important */
+  display: inline-block;
+}
+
+.settings-button {
+  background-color: #292d7a;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-left: 30px;
+}
+
+.settings-button:hover {
+  background-color: #333454;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  margin-left: 80px;
+  margin-top: -30px;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  border: 1px solid rgb(0, 0, 0);
+  color: black;
+  padding: 7px 7px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #d0cece;
+}
+
+.settings-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-tags {
+    justify-content: center;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .tab-buttons button {
+    width: 100%;
+    padding: 0.6rem 1rem;
+  }
+
+  .settings-button {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .quote-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,140 @@
+/* src/pages/EditProfile.css */
+.body {
+  position: relative; /* Add this */
+  background-color: #3f3f69;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.square {
+  position: absolute;
+  background-color: hsl(234, 30%, calc(30% + var(--i) * 2%));
+  animation: floatSquare 20s linear infinite;
+  animation-delay: calc(-6s * var(--i));
+  border-radius: 4px;
+}
+
+@keyframes floatSquare {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-80px) rotate(180deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+.edit-profile-container {
+  z-index: 2;
+  position: relative;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #202050;
+  margin-top: 5px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edit-profile-container:hover {
+  transform: translateY(-6px) scale(1);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.edit-profile-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.edit-form .form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="file"] {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.edit-form button {
+  width: 100%;
+  background-color: #4e54c8;
+  color: white;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.edit-form button:hover {
+  background-color: #5c63d8;
+}
+
+.avatar-preview {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.form-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+.tags-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #474188;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
+}
+
+.tag-pill.selected {
+  background-color: #674cb6;
+  color: #000;
+}

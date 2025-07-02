@@ -1,0 +1,206 @@
+:root {
+  --text: #d7d3f8;
+  --background: #3f3f69;
+  --primary: #b96aa2;
+  --secondary: #17184f;
+  --accent: #332f9c;
+  --hover: #975183;
+}
+
+.background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 125%;
+  background-image: url("https://thumbs.dreamstime.com/b/serene-japanese-night-landscape-cherry-blossoms-full-moon-breathtaking-digital-illustration-scene-featuring-369071957.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px) brightness(0.6);
+  z-index: 0;
+}
+
+.background-blur::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.register-container {
+  height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+  position: relative;
+}
+
+.register-box {
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 9, 37, 0.95),
+    rgba(37, 29, 107, 0.85)
+  );
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.08),
+    0 0 15px rgba(149, 130, 255, 0.2), 0 0 8px rgba(185, 106, 162, 0.3);
+  width: 100%;
+  max-width: 320px;
+  max-height: 750px;
+  padding-bottom: 40px;
+  margin-top: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-box h2 {
+  margin-top: -10px;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: var(--text);
+  text-shadow: 0 0 10px rgba(185, 106, 162, 0.4);
+  z-index: 2;
+}
+
+.register-box input[type="text"],
+.register-box input[type="email"],
+.register-box input[type="password"],
+.register-box input[type="file"] {
+  width: 92%;
+  padding: 0.75rem 0.75rem;
+  margin: 0.4rem 0;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(97, 92, 174, 0.9);
+  color: var(--text);
+  font-size: 1rem;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+.register-box input:focus {
+  outline: none;
+  box-shadow: 0 0 8px var(--primary);
+}
+
+.register-box input::placeholder {
+  color: #b9b9e3;
+}
+
+.avatar-upload {
+  margin-top: 1rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.avatar-preview {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #4c4c7c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px dashed var(--accent);
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.avatar-preview:hover {
+  background-color: var(--accent);
+}
+
+.avatar-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-preview span {
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.avatar-text {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.tags-section {
+  margin-top: 1rem;
+}
+
+.tags-section p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-pill {
+  padding: 0.4rem 1rem;
+  background-color: var(--accent);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.85rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag-pill:hover {
+  background-color: #726bb1;
+  color: #fff;
+}
+
+.tag-pill.selected {
+  background-color: var(--primary);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.register-box button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 1.5rem;
+  background: linear-gradient(to right, #b96aa2, #9b6bd0);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(185, 106, 162, 0.6);
+  transition: all 0.8s ease-in;
+  z-index: 2;
+}
+
+.register-box button:hover {
+  background: linear-gradient(to right, #9b6bd0, #b96aa2);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
+}
+
+.register-box .error {
+  text-align: center;
+  margin-top: 1rem;
+  color: #ff6b6b;
+  z-index: 2;
+}

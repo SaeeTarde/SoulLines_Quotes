@@ -1,0 +1,131 @@
+/* LandingPage.css */
+
+:root {
+  --text: #d7d3f8;
+  --background: #3f3f69;
+  --primary: #b96aa2;
+  --secondary: #222a6d;
+  --accent: #332f9c;
+}
+
+.landing-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://thumbs.dreamstime.com/b/serene-japanese-night-landscape-cherry-blossoms-full-moon-breathtaking-digital-illustration-scene-featuring-369071957.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px) brightness(0.6); /* 🔥 Blur & darken */
+  z-index: 0;
+}
+
+.background-blur::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* optional dark overlay */
+}
+
+.landing-content {
+  position: relative;
+  z-index: 1;
+  color: #d7d3f8;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.landing-title {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: "Pacifico", cursive;
+  color: var(--text);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px #b96aa2aa;
+}
+
+.landing-tagline {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.4rem;
+  color: #ccc;
+  text-shadow: 0 0 4px #b96aa2aa;
+  margin-bottom: 0.2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+.landing-tagline2 {
+  font-family: "Great Vibes", cursive;
+  text-shadow: 0 0 4px #b96aa2aa;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.landing-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  box-shadow: 0 0 10px #b96aa2aa;
+}
+
+.landing-button::after {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.landing-button:hover::after {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.landing-button:hover {
+  background-color: var(--accent);
+  border: 2px solid var(--text);
+  transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
