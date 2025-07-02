@@ -1,0 +1,24 @@
+graph TD;
+  User -->|posts| QuotePost;
+  User -->|likes| Like;
+  User -->|comments| Comment;
+  QuotePost -->|has| Like;
+  QuotePost -->|has| Comment;
+  QuotePost -->|has| Tag;
+
+
+✅ What You Can Build Next (Suggestions):
+Feature	Purpose
+💬 Comments system	Enable users to discuss quotes            -NOT DOINGGG
+🔍 Search by tags or text	For finding quotes easily           -DONE
+📊 User dashboard	Show stats: quotes posted, likes, saves     -DONE
+🧠 Quote suggestions	Based on tags or previous saves         
+🧾 Pagination & filters	For better browsing UX
+🌐 Public API	Allow frontend to fetch quotes flexibly
+🌙 Dark Mode toggle	Just for UI polish 😎
+   Download quotes
+
+three  , tags - poetry, healing,
+four   , tags - music, love 
+
+make separate dashboard view for personal and for to see other profile pics 
