@@ -92,8 +92,8 @@ const registerUser = asyncHandler(async (req, res) => {
 
   const options = {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "Lax",
+    secure: true, // Always true on Render
+    sameSite: "None",
   };
 
   return res
@@ -148,8 +148,8 @@ const loginUser = asyncHandler(async (req, res) => {
 
   const options = {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "Lax",
+    secure: true,
+    sameSite: "None",
   };
   // localStorage.setItem("userId", res.data.data._id);
   console.log("Logged in successfully");
@@ -179,8 +179,8 @@ const logoutUser = asyncHandler(async (req, res) => {
   // Clear the cookies
   const options = {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "Lax",
+    secure: true, // ✅ Render is HTTPS, so force secure
+    sameSite: "None",
   };
 
   return res
@@ -223,8 +223,8 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 
     const options = {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "Lax",
+      secure: true, // Always true on Render
+      sameSite: "None",
     };
     console.log("Incoming Refresh:", incomingRefreshToken);
     console.log("User Refresh from DB:", user?.refreshToken);
