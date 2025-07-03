@@ -19,7 +19,7 @@ const UserDashboard = () => {
     const fetchDashboard = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:7000/api/v1/users/dashboard",
+          "https://soullines-quotes.onrender.com/api/v1/users/dashboard",
           { withCredentials: true }
         );
         const data = res.data.data;
