@@ -46,7 +46,7 @@ const UserDashboard = () => {
     if (!confirm) return;
     try {
       await axios.delete(
-        `http://localhost:7000/api/v1/users/delete/${quoteId}`,
+        `https://soullines-quotes.onrender.com/api/v1/users/delete/${quoteId}`,
         {
           withCredentials: true,
         }

@@ -57,7 +57,7 @@ const AddPost = () => {
       }
 
       await axios.post(
-        "http://localhost:7000/api/v1/users/add-post",
+        "https://soullines-quotes.onrender.com/api/v1/users/add-post",
         formData,
         {
           withCredentials: true,

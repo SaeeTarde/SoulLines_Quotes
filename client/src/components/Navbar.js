@@ -14,7 +14,7 @@ const Navbar = () => {
     const fetchUserData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:7000/api/v1/users/dashboard`,
+          `https://soullines-quotes.onrender.com/api/v1/users/dashboard`,
           { withCredentials: true }
         );
         setAvatarUrl(res.data.data.user.avatar);
@@ -40,7 +40,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:7000/api/v1/users/logout",
+        "https://soullines-quotes.onrender.com/api/v1/users/logout",
         {},
         { withCredentials: true }
       );

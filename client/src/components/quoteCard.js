@@ -25,7 +25,7 @@ const QuoteCard = ({ quote, onDelete, canDelete = false }) => {
     const fetchLikes = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:7000/api/v1/users/likes/${quote._id}`,
+          `https://soullines-quotes.onrender.com/api/v1/users/likes/${quote._id}`,
           { withCredentials: true }
         );
         setLikesCount(res.data.data.likes);
@@ -62,7 +62,7 @@ const QuoteCard = ({ quote, onDelete, canDelete = false }) => {
     setLikeLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:7000/api/v1/users/like",
+        "https://soullines-quotes.onrender.com/api/v1/users/like",
         { quoteId: quote._id },
         { withCredentials: true }
       );
@@ -79,7 +79,7 @@ const QuoteCard = ({ quote, onDelete, canDelete = false }) => {
     setSaveLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:7000/api/v1/users/save",
+        "https://soullines-quotes.onrender.com/api/v1/users/save",
         { quoteId: quote._id },
         { withCredentials: true }
       );

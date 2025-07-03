@@ -23,7 +23,7 @@ const SearchResultsPage = () => {
     const fetchSearchResults = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:7000/api/v1/users/search",
+          "https://soullines-quotes.onrender.com/api/v1/users/search",
           {
             params: {
               query: searchQuery,

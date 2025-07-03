@@ -57,7 +57,7 @@ const RegisterPage = () => {
       if (avatar) formData.append("avatar", avatar);
 
       const res = await axios.post(
-        "http://localhost:7000/api/v1/users/register",
+        "https://soullines-quotes.onrender.com/api/v1/users/register",
         formData,
         {
           withCredentials: true,

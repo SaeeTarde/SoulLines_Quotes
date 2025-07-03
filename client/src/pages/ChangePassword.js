@@ -23,7 +23,7 @@ const ChangePassword = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:7000/api/v1/users/change-password",
+        "https://soullines-quotes.onrender.com/api/v1/users/change-password",
         { oldPassword, newPassword },
         { withCredentials: true }
       );

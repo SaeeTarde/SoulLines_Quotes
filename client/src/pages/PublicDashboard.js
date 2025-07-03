@@ -17,7 +17,7 @@ const PublicUserProfile = () => {
     const fetchProfile = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:7000/api/v1/users/${userId}/profile`
+          `https://soullines-quotes.onrender.com/api/v1/users/${userId}/profile`
         );
         const data = res.data.data;
         setUserInfo(data.user);

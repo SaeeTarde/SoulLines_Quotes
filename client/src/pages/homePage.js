@@ -14,7 +14,7 @@ const HomePage = () => {
     const fetchQuotes = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:7000/api/v1/users/quotes",
+          "https://soullines-quotes.onrender.com/api/v1/users/quotes",
           { withCredentials: true }
         );
         setQuotes(res.data.data.docs);

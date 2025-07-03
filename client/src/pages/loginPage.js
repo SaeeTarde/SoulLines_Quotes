@@ -19,7 +19,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:7000/api/v1/users/login",
+        "https://soullines-quotes.onrender.com/api/v1/users/login",
         {
           identifier: form.identifier,
           password: form.password,

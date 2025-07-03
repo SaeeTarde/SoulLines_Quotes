@@ -34,7 +34,7 @@ const EditProfile = () => {
     const fetchProfile = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:7000/api/v1/users/dashboard",
+          "https://soullines-quotes.onrender.com/api/v1/users/dashboard",
           { withCredentials: true }
         );
         const user = res.data.data.user;
@@ -85,7 +85,7 @@ const EditProfile = () => {
 
     try {
       await axios.patch(
-        "http://localhost:7000/api/v1/users/update-profile",
+        "https://soullines-quotes.onrender.com/api/v1/users/update-profile",
         formData,
         {
           withCredentials: true,
