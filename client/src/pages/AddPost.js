@@ -81,8 +81,8 @@ const AddPost = () => {
 
   return (
     <>
+      <Navbar />
       <div className="body">
-        <Navbar />
         <div className="addpost-container">
           <div className="background-wrapper">
             {Array.from({ length: 30 }).map((_, i) => (
