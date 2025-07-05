@@ -51,8 +51,14 @@ const RegisterPage = () => {
     // ✅ Clear old JWT cookie (if any)
     // prevent double submission
     if (isSubmitting) return;
+    // 💡 Client-side checks first
+    if (!form.username.trim() || !form.email.trim() || !form.password.trim()) {
+      setError("Please fill in all required fields.");
+      return;
+    }
 
     setIsSubmitting(true);
+    setError(""); // clear old error
     try {
       const formData = new FormData();
       formData.append("username", form.username);
