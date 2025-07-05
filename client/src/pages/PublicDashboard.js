@@ -38,6 +38,26 @@ const PublicUserProfile = () => {
     <>
       <Navbar />
       <div className="dashboard-container">
+        <div className="background-wrapper">
+          <div className="floating-squares">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <span
+                key={i}
+                className="square"
+                style={{
+                  "--i": i,
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDuration: `${15 + Math.random() * 10}s`,
+                  opacity: 0.05 + Math.random() * 0.2,
+                  width: `${20 + Math.random() * 30}px`,
+                  height: `${20 + Math.random() * 30}px`,
+                  transform: `rotate(${Math.random() * 360}deg)`,
+                }}
+              ></span>
+            ))}
+          </div>
+        </div>
         {/* --- Profile Info --- */}
         <div className="profile-header">
           <img src={userInfo.avatar} alt="Avatar" className="profile-avatar" />
