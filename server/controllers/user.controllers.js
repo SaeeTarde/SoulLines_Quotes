@@ -424,7 +424,7 @@ const getSavedQuotes = asyncHandler(async (req, res) => {
 });
 
 const getAllQuotes = asyncHandler(async (req, res) => {
-  const { page = 1, limit = 10, search = "", tags = [] } = req.query;
+  const { page = 1, limit = 20, search = "", tags = [] } = req.query;
   const userId = req.user?._id; // Logged-in user
   // Convert tags to array if it's comma-separated
   const tagFilter = Array.isArray(tags) ? tags : tags.split(",");
