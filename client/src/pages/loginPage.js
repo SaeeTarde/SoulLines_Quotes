@@ -10,6 +10,7 @@ const LoginPage = () => {
   const [form, setForm] = useState({ identifier: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -17,6 +18,9 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
     try {
       const res = await axios.post(
         "https://soullines-quotes.onrender.com/api/v1/users/login",
@@ -33,6 +37,8 @@ const LoginPage = () => {
       navigate("/home"); // ✅ Move navigation here AFTER login is done
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
+    } finally {
+      setIsSubmitting(false); // 🔓 re-enable button
     }
   };
 
@@ -57,7 +63,9 @@ const LoginPage = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit">Login</button>
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Logging...may take some seconds" : "Login"}
+          </button>
           {error && <p>{error}</p>}
         </form>
       </div>

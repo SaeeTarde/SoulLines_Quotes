@@ -86,6 +86,10 @@
   box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
   z-index: 4;
 }
+.login-box button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 .login-box p {
   text-align: center;

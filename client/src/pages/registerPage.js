@@ -149,7 +149,7 @@ const RegisterPage = () => {
           </div>
 
           <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Registering..." : "Register"}
+            {isSubmitting ? "Registering...may take some time" : "Register"}
           </button>
           {error && <p className="error">{error}</p>}
         </form>
