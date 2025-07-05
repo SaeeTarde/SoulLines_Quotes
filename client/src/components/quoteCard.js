@@ -155,7 +155,12 @@ const QuoteCard = ({ quote, onDelete, canDelete = false }) => {
         </div>
       )}
       <div className="quote-top">
-        <p className="quote-text">"{quote.quoteText}"</p>
+        <p
+          className="quote-text"
+          style={{ fontFamily: quote.fontFamily || "inherit" }}
+        >
+          "{quote.quoteText}"
+        </p>
         <p className="quote-author">— {quote.authorName || "Anonymous"}</p>
       </div>
 

@@ -339,7 +339,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
 
 const postQuote = asyncHandler(async (req, res) => {
   const userId = req.user._id;
-  const { quoteText, authorName, source, tags } = req.body;
+  const { quoteText, authorName, source, tags, fontFamily } = req.body;
 
   if (!quoteText?.trim()) {
     throw new ApiError(400, "Quote text is required");
@@ -384,7 +384,8 @@ const postQuote = asyncHandler(async (req, res) => {
     source,
     backgroundImage,
     postedBy: userId,
-    tags: tagArray, // If your quoteSchema includes tags: [ObjectId]
+    tags: tagArray,
+    fontFamily: fontFamily || "inherit", // If your quoteSchema includes tags: [ObjectId]
   });
   return res
     .status(201)

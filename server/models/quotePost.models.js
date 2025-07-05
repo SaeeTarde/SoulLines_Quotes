@@ -33,6 +33,10 @@ const quoteSchema = new mongoose.Schema(
         ref: "Tag",
       },
     ],
+    fontFamily: {
+      type: String,
+      default: "inherit",
+    },
   },
   { timestamps: true }
 );
