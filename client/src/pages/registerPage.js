@@ -32,6 +32,7 @@ const RegisterPage = () => {
   const [selectedTags, setSelectedTags] = useState([]);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -48,6 +49,10 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // ✅ Clear old JWT cookie (if any)
+    // prevent double submission
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
     try {
       const formData = new FormData();
       formData.append("username", form.username);
@@ -71,6 +76,8 @@ const RegisterPage = () => {
       navigate("/home");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
+    } finally {
+      setIsSubmitting(false); // 🔓 re-enable button
     }
   };
 
@@ -141,7 +148,9 @@ const RegisterPage = () => {
             </div>
           </div>
 
-          <button type="submit">Register</button>
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Registering..." : "Register"}
+          </button>
           {error && <p className="error">{error}</p>}
         </form>
       </div>
